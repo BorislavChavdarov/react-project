@@ -1,20 +1,19 @@
-//import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Header = () => {
     return (
         <div className="w3-top">
         <div className="w3-bar w3-black w3-card">
-          <a className="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" title="Toggle Navigation Menu"><i className="fa fa-bars"></i></a>
-          <a href="#" className="w3-bar-item w3-button w3-padding-large">HOME</a>
-          <a href="#band" className="w3-bar-item w3-button w3-padding-large w3-hide-small">ALL BOOKS</a>
-          <a href="#band" className="w3-bar-item w3-button w3-padding-large w3-hide-small">RECENT BOOKS</a>
-          <a href="#band" className="w3-bar-item w3-button w3-padding-large w3-hide-small">CREATE BOOK</a>
-          <a href="#contact" className="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT US</a>
+          <Link to="/" className="w3-bar-item w3-button w3-padding-large">HOME</Link>
+          <Link to="/all-books" className="w3-bar-item w3-button w3-padding-large w3-hide-small">ALL BOOKS</Link>
+          <Link to="/recent-books" className="w3-bar-item w3-button w3-padding-large w3-hide-small">RECENT BOOKS</Link>
+          <Link to="/create-book" className="w3-bar-item w3-button w3-padding-large w3-hide-small">CREATE BOOK</Link>
+          <Link to="/contact-us" className="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT US</Link>
           
-          <a href="#tour" className="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGOUT</a>
-          <a href="#tour" className="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGIN</a>
-          <a href="#tour" className="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">REGISTER</a>
+          <Link to="/logout" className="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGOUT</Link>
+          <Link to="/login" className="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGIN</Link>
+          <Link to="/register" className="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">REGISTER</Link>
           
          
         </div>
