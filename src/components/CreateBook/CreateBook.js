@@ -10,10 +10,10 @@ const CreateBook = () => {
         <form className="w3-container" action="/action_page.php">
           <p>      
           <label className="w3-text-blue"><b>Name</b></label>
-          <input className="w3-input w3-border w3-white" name="Name" type="text" /></p>
+          <input className="w3-input w3-border w3-white" name="name" type="text" /></p>
           <p>       
-          <label className="w3-text-blue"><b>Date of creation</b></label>
-          <input className="w3-input w3-border w3-white" name="createdAt" type="text" /></p>
+          <label className="w3-text-blue"><b>year</b></label>
+          <input className="w3-input w3-border w3-white" name="Year" type="text" /></p>
           <p>       
           <label className="w3-text-blue"><b>image URL</b></label>
           <input className="w3-input w3-border w3-white" name="imgUrl" type="text" /></p>
