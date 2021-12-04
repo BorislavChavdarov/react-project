@@ -5,3 +5,7 @@ export const getAll = () => {
  .then(res => res.json())
  
 }
+export const getOne = (id) => {
+    return fetch(`${baseUrl}/data/books/${id}`)
+ .then(res => res.json())
+}

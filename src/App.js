@@ -20,7 +20,7 @@ function App() {
        <Route path="/create-book" element={<CreateBook />} />
        <Route path="/all-books" element={<AllBooks />} />
        <Route path="/recent-books" element={<RecentBooks />} />
-       <Route path="/details" element={<Details />} />
+       <Route path="/details/:bookId" element={<Details />} />
      </Routes>
     </div>
   );
