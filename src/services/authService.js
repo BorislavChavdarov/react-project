@@ -24,3 +24,13 @@ export const login = (email, password) => {
     .then(res => res.json())
     
  }
+ export const logout = (token) => {
+    return fetch(`${baseUrl}/users/logout`,{
+        method: 'GET',
+        headers: {
+         'content-type': 'application/json',
+         "X-Authorization": token
+     },
+    })
+    .then(res => res.json())
+ }

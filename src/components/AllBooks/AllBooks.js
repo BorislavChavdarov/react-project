@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import * as bookServices from "../../services/BookServices.js";
+import * as bookServices from "../../services/bookServices.js";
 import BookCard from "./BookCard.js";
 
 const AllBooks =  () => {

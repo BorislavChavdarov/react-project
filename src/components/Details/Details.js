@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from "react";
 import { useParams } from "react-router";
-import * as bookServices from "../../services/BookServices.js"
+import * as bookServices from "../../services/bookServices.js"
 
 const Details = () => {
   const { bookId } = useParams();
