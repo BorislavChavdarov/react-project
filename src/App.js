@@ -8,8 +8,10 @@ import CreateBook from "./components/CreateBook/CreateBook";
 import AllBooks from "./components/AllBooks/AllBooks";
 import Details from "./components/Details/Details";
 import RecentBooks from "./components/RecentBooks/RecentBooks";
+import { AuthProvider } from "./contexts/authContext";
 function App() {
   return (
+    <AuthProvider>
     <div className="App">
      <Header />
      <Routes>
@@ -23,6 +25,7 @@ function App() {
        <Route path="/details/:bookId" element={<Details />} />
      </Routes>
     </div>
+    </AuthProvider>
   );
 }
 
