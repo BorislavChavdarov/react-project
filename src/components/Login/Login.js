@@ -12,7 +12,6 @@ const {login} = useAuthContext();
     e.preventDefault();
     let { email, password } = Object.fromEntries(new FormData(e.currentTarget));
 
-    console.log(email, password)
     authService.login(email, password)
  .then(res => {
 login(res);

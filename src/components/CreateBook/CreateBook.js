@@ -1,19 +1,32 @@
-
+import { useNavigate } from "react-router";
+import * as bookService from "../../services/bookServices.js";
+import { useAuthContext } from "../../contexts/authContext";
 
 
 const CreateBook = () => {
+  const {user} = useAuthContext();
+  const navigate = useNavigate()
+ const submitHandler = (e) => {
+   e.preventDefault();
+   let { name, year, imgUrl, description, author } = Object.fromEntries(new FormData(e.currentTarget));
+   bookService.create({name, year, imgUrl, description, author}, user.accessToken)
+   .then(res => {
+navigate("/all-books")
+   })
+   
+ }
     return (
         <div className="w3-card-4 w3-display-middle w3-quarter ">
         <div className="w3-container w3-blue">
           <h2>Create Book</h2>
         </div>
-        <form className="w3-container" action="/action_page.php">
+        <form className="w3-container" method="POST" onSubmit={submitHandler}>
           <p>      
           <label className="w3-text-blue"><b>Name</b></label>
           <input className="w3-input w3-border w3-white" name="name" type="text" /></p>
           <p>       
           <label className="w3-text-blue"><b>year</b></label>
-          <input className="w3-input w3-border w3-white" name="Year" type="text" /></p>
+          <input className="w3-input w3-border w3-white" name="year" type="text" /></p>
           <p>       
           <label className="w3-text-blue"><b>image URL</b></label>
           <input className="w3-input w3-border w3-white" name="imgUrl" type="text" /></p>
