@@ -10,6 +10,7 @@ import Details from "./components/Details/Details";
 import RecentBooks from "./components/RecentBooks/RecentBooks";
 import { AuthProvider } from "./contexts/authContext";
 import Logout from "./components/Logout/Logout";
+import Edit from "./components/Edit/Edit";
 function App() {
   return (
     <AuthProvider>
@@ -24,6 +25,7 @@ function App() {
        <Route path="/all-books" element={<AllBooks />} />
        <Route path="/recent-books" element={<RecentBooks />} />
        <Route path="/details/:bookId" element={<Details />} />
+       <Route path="/edit/:bookId" element={<Edit />} />
        <Route path="/logout" element={<Logout />} />
      </Routes>
     </div>

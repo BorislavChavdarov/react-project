@@ -8,8 +8,8 @@ const CreateBook = () => {
   const navigate = useNavigate()
  const submitHandler = (e) => {
    e.preventDefault();
-   let { name, year, imgUrl, description, author } = Object.fromEntries(new FormData(e.currentTarget));
-  bookService.create({name, year, imgUrl, description, author}, user.accessToken)
+   let { name, year, imgUrl, description, author, language } = Object.fromEntries(new FormData(e.currentTarget));
+  bookService.create({name, year, imgUrl, description, author, language}, user.accessToken)
    .then(res => {
 navigate("/all-books")
    })
@@ -37,6 +37,9 @@ navigate("/all-books")
           <label className="w3-text-blue"><b>Author</b></label>
           <input className="w3-input w3-border w3-white" name="author" type="text" /></p>
           <p>      
+          <label className="w3-text-blue"><b>Language</b></label>
+          <input className="w3-input w3-border w3-white" name="language" type="text" /></p>
+          <p>  
          
           <button className="w3-btn w3-blue">Create</button></p>
         </form>

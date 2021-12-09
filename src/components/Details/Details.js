@@ -1,19 +1,30 @@
 import {React, useEffect, useState} from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { Link } from "react-router-dom";
+import { useAuthContext } from "../../contexts/authContext.js";
 import * as bookServices from "../../services/bookServices.js"
 
 const Details = () => {
   const { bookId } = useParams();
-  console.log(bookId)
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
+  console.log(user)
   
   const [book, setBook] = useState({});
 useEffect( async () => {
 bookServices.getOne(bookId)
 .then(result => {
-  console.log(result)
   setBook(result)
 })
 }, [])
+const deleteHandler = (e) => {
+  e.preventDefault();
+ bookServices.deleteBook(bookId, user.accessToken)
+ .then(() => {
+navigate("/all-books")
+ })
+}
+
     return (
       <div>
         <div className="w3-row-padding ">
@@ -32,7 +43,20 @@ bookServices.getOne(bookId)
         <div className="w3-third w3-display-topright w3-padding-64" style={{width:"50%"}}>
           <h1>Description:</h1>
           <p>{book.description}</p>
+          {user._id == book._ownerId
+                   ?(<>
+                   <Link to={`/edit/${book._id}`} className="w3-btn w3-green ">Edit</Link>
+                   <a onClick={deleteHandler} className="w3-btn w3-red">Delete</a>
+                   </>
+                   )
+                   : ( user._id == ""
+                        ? (<p>login to like post</p>)
+                        :<button className="w3-btn w3-blue">Like</button>)
+                  }
+       
          
+          
+         <h1>Likes:0</h1>
          </div>
          </div>
          </div>)
