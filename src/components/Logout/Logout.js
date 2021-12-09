@@ -5,17 +5,18 @@ import * as authService from "../../services/authService.js";
 
 const Logout = () => {
     const navigate = useNavigate();
-    const {user, logout} = useAuthContext()
+    const { user, logout } = useAuthContext()
     useEffect(() => {
+        console.log(user.accessToken)
         authService.logout(user.accessToken)
-        .then(res => {
-            logout()
-            navigate("/")
-        })
+            .then(() => {
+                logout()
+                navigate("/")
+            })
     }, [])
-   
+
 
     return null;
-  
+
 }
 export default Logout;

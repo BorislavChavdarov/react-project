@@ -25,12 +25,10 @@ export const login = (email, password) => {
     
  }
  export const logout = (token) => {
-    return fetch(`${baseUrl}/users/logout`,{
-        method: 'GET',
+     console.log("TOKEN:", token)
+    return fetch(`${baseUrl}/users/logout`, {
         headers: {
-         'content-type': 'application/json',
-         "X-Authorization": token
-     },
+            'X-Authorization': token,
+        }
     })
-    .then(res => res.json())
- }
+};

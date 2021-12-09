@@ -9,7 +9,7 @@ const CreateBook = () => {
  const submitHandler = (e) => {
    e.preventDefault();
    let { name, year, imgUrl, description, author } = Object.fromEntries(new FormData(e.currentTarget));
-   bookService.create({name, year, imgUrl, description, author}, user.accessToken)
+  bookService.create({name, year, imgUrl, description, author}, user.accessToken)
    .then(res => {
 navigate("/all-books")
    })

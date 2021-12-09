@@ -13,6 +13,7 @@ const Register = () => {
 if (password == rePassword) {
    register(email, password)
   .then(res => {
+   
     login(res)
     navigate("/")
    

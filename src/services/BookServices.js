@@ -5,12 +5,18 @@ export const getAll = () => {
  .then(res => res.json())
  
 }
+export const getAllSortedByDate = () => {
+    return fetch(`${baseUrl}/data/books?sortBy=_createdOn%20desc`)
+    .then(res => res.json())
+    
+   }
 export const getOne = (id) => {
     return fetch(`${baseUrl}/data/books/${id}`)
  .then(res => res.json())
 }
 export const create = (data, token) => {
-    return fetch(`${baseUrl}/data/books`, {
+    console.log(data, token)
+    return fetch(`${baseUrl}/data/books/`, {
         method:"POST",
         headers: {
             'content-type': 'application/json',
