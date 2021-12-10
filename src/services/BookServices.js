@@ -49,6 +49,11 @@ export const deleteBook = (bookId, token) => {
     })
     .then(res => res.json())
 }
+export const getMyBooks = (userId) => {
+    return fetch(`${baseUrl}/data/books?where=_ownerId%3D%22${userId}%22`)
+    .then(res => res.json())
+}
+
 export const like = (bookId, token) => {
 
 }

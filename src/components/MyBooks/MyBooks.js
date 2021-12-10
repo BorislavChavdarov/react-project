@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
+import { useAuthContext } from "../../contexts/authContext.js";
 import * as bookServices from "../../services/bookServices.js";
 import BookCard from "../Common/BookCard.js";
 
-const RecentBooks =  () => {
-
+const MyBooks =  () => {
+ const { user } = useAuthContext()
   const [books, setBooks] = useState([]);
 useEffect( async () => {
-bookServices.getAllSortedByDate()
+bookServices.getMyBooks(user._id)
 .then(result => {
   setBooks(result)
 })
@@ -18,15 +19,17 @@ bookServices.getAllSortedByDate()
       <div className="w3-row-padding w3-padding-32" style={{margin:"0 -16px"}}>
         
 
-      {
+          {
           books.length > 0
           ?books.map(x => <BookCard key={x._id} book={x} />)
           :<h1>No books to show</h1>
         }
+
+       
       </div>
     </div>
   </div>
   
   )
 }
-export default RecentBooks;
+export default MyBooks;

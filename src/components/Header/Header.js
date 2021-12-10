@@ -11,7 +11,10 @@ const Header = () => {
           <Link to="/all-books" className="w3-bar-item w3-button w3-padding-large w3-hide-small">ALL BOOKS</Link>
           <Link to="/recent-books" className="w3-bar-item w3-button w3-padding-large w3-hide-small">RECENTLY ADDED BOOKS</Link>
           {Boolean(user.accessToken)
-          ? <Link to="/create-book" className="w3-bar-item w3-button w3-padding-large w3-hide-small">CREATE BOOK</Link>
+          ? (<>
+          <Link to="/create-book" className="w3-bar-item w3-button w3-padding-large w3-hide-small">CREATE BOOK</Link>
+          <Link to="/my-books" className="w3-bar-item w3-button w3-padding-large w3-hide-small">MY BOOKS</Link>
+          </>)
           : <></>
         }
           

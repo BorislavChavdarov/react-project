@@ -18,8 +18,11 @@ bookServices.getAll()
       <div className="w3-row-padding w3-padding-32" style={{margin:"0 -16px"}}>
         
 
-          {books.map(x => <BookCard key={x._id} book={x} />)}
-
+      {
+          books.length > 0
+          ?books.map(x => <BookCard key={x._id} book={x} />)
+          :<h1>No books to show</h1>
+        }
        
       </div>
     </div>

@@ -13,6 +13,7 @@ import Logout from "./components/Logout/Logout";
 import Edit from "./components/Edit/Edit";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MyBooks from "./components/MyBooks/MyBooks";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
        <Route path="/details/:bookId" element={<Details />} />
        <Route path="/edit/:bookId" element={<Edit />} />
        <Route path="/logout" element={<Logout />} />
+       <Route path="/my-books" element={<MyBooks />} />
      </Routes>
     </div>
     </AuthProvider>
