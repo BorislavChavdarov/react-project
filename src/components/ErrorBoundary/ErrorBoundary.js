@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import "./ErrorBoundary.css"
 class ErrorBoundary extends Component {
     constructor(props) {
         super(props);
@@ -20,8 +20,12 @@ class ErrorBoundary extends Component {
     render() {
         if (this.state.error) {
             return (
-                <h1>404 Not found</h1>
-            );
+    <div class="container">
+        <h2>ERROR</h2>
+        <h1>404</h1>
+        <h2>PAGE NOT FOUND</h2>
+        </div>
+ );
         }
 
         return this.props.children;

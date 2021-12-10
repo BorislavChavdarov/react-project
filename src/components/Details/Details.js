@@ -14,7 +14,12 @@ const Details = () => {
 useEffect( async () => {
 bookServices.getOne(bookId)
 .then(result => {
-  setBook(result)
+ 
+    setBook(result)
+  
+    
+  
+  
 })
 }, [])
 const deleteHandler = (e) => {

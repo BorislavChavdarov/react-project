@@ -14,24 +14,27 @@ const Edit = () => {
 useEffect(() => {
     bookServices.getOne(bookId)
         .then(res => {
+            if(res._ownerId != user._id) {
+                navigate(`/details/${bookId}`)
+            }
             setBook(res);
         })
 }, [])
     
 const submitHandler = (e) => {
     e.preventDefault();
-    let { name, year, imgUrl, description, author, language } = Object.fromEntries(new FormData(e.currentTarget));
+    let { title, year, imgUrl, description, author, language } = Object.fromEntries(new FormData(e.currentTarget));
    
-    bookServices.editBook(bookId, {name, year, imgUrl, description, author, language}, user.accessToken)
+    bookServices.editBook(bookId, {title, year, imgUrl, description, author, language}, user.accessToken)
     .then(res => {
  navigate(`/details/${bookId}`)
     })
     
   }
-  const nameChangeHandler = (e) => {
-    let currentName = e.target.value;
+  const titleChangeHandler = (e) => {
+    let title = e.target.value;
     
-    if (currentName.length < 3) {
+    if (title.length < 3) {
         setErrors(state => ({...state, name: 'Book name must be at least 3 characters long!'}))
     }  else {
         setErrors(state => ({...state, name: false}))
@@ -84,8 +87,8 @@ const submitHandler = (e) => {
         <form className="w3-container" method="POST" onSubmit={submitHandler} >
         <Alert  variant="danger" show={errors.name}>{errors.name}</Alert>
             <p>
-                <label className="w3-text-blue"><b>Name</b></label>
-                <input className="w3-input w3-border w3-white" name="name" type="text" defaultValue={book.name} onChange={nameChangeHandler} /></p>
+                <label className="w3-text-blue"><b>Title</b></label>
+                <input className="w3-input w3-border w3-white" name="title" type="text" defaultValue={book.title} onChange={titleChangeHandler} /></p>
             <p>
                 <label className="w3-text-blue"><b>year</b></label>
                 <input className="w3-input w3-border w3-white" name="year" type="text" defaultValue={book.year} onChange={yearChangeHandler} /></p>

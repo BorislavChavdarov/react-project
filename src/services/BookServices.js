@@ -14,7 +14,7 @@ export const getOne = (id) => {
     return fetch(`${baseUrl}/data/books/${id}`)
  .then(res => res.json())
 }
-export const create = ({name, year, imgUrl, description, author, language}, token) => {
+export const create = ({title, year, imgUrl, description, author, language}, token) => {
    
     return fetch(`${baseUrl}/data/books/`, {
         method:"POST",
@@ -22,12 +22,12 @@ export const create = ({name, year, imgUrl, description, author, language}, toke
             'content-type': 'application/json',
             "X-Authorization": token
         },
-     body: JSON.stringify({name, year, imgUrl, description, author, language, likes:[0, []]})
+     body: JSON.stringify({title, year, imgUrl, description, author, language, likes:[0, []]})
 
     })
     .then(res => res.json())
 }
-export const editBook = (bookId, {name, year, imgUrl, description, author, language}, token) => {
+export const editBook = (bookId, {title, year, imgUrl, description, author, language}, token) => {
     
     return fetch(`${baseUrl}/data/books/${bookId}`, {
         method:"PUT",
@@ -35,7 +35,7 @@ export const editBook = (bookId, {name, year, imgUrl, description, author, langu
             'content-type': 'application/json',
             "X-Authorization": token
         },
-     body: JSON.stringify({name, year, imgUrl, description, author, language, likes:[0, []]})
+     body: JSON.stringify({title, year, imgUrl, description, author, language, likes:[0, []]})
 
     })
     .then(res => res.json())

@@ -10,17 +10,17 @@ const CreateBook = () => {
   const [errors, setErrors] = useState({name: false})
  const submitHandler = (e) => {
    e.preventDefault();
-   let { name, year, imgUrl, description, author, language } = Object.fromEntries(new FormData(e.currentTarget));
-  bookService.create({name, year, imgUrl, description, author, language}, user.accessToken)
+   let { title, year, imgUrl, description, author, language } = Object.fromEntries(new FormData(e.currentTarget));
+  bookService.create({title, year, imgUrl, description, author, language}, user.accessToken)
    .then(res => {
 navigate("/all-books")
    })
    
  }
- const nameChangeHandler = (e) => {
-  let currentName = e.target.value;
+ const titleChangeHandler = (e) => {
+  let title = e.target.value;
   
-  if (currentName.length < 3) {
+  if (title.length < 3) {
       setErrors(state => ({...state, name: 'Book name must be at least 3 characters long!'}))
   }  else {
       setErrors(state => ({...state, name: false}))
@@ -74,8 +74,8 @@ const languageChangeHandler = (e) => {
         <form className="w3-container" method="POST" onSubmit={submitHandler}>
         <Alert  variant="danger" show={errors.name}>{errors.name}</Alert>
           <p>      
-          <label className="w3-text-blue"><b>Name</b></label>
-          <input className="w3-input w3-border w3-white" name="name" type="text" onChange={nameChangeHandler} /></p>
+          <label className="w3-text-blue"><b>Title</b></label>
+          <input className="w3-input w3-border w3-white" name="title" type="text" onChange={titleChangeHandler} /></p>
           <p>       
           <label className="w3-text-blue"><b>year</b></label>
           <input className="w3-input w3-border w3-white" name="year" type="text" onChange={yearChangeHandler} /></p>
