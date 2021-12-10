@@ -8,7 +8,7 @@ const Details = () => {
   const { bookId } = useParams();
   const { user } = useAuthContext();
   const navigate = useNavigate();
-  console.log(user)
+  
   
   const [book, setBook] = useState({});
 useEffect( async () => {

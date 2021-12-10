@@ -19,7 +19,7 @@ useEffect(() => {
 const submitHandler = (e) => {
     e.preventDefault();
     let { name, year, imgUrl, description, author, language } = Object.fromEntries(new FormData(e.currentTarget));
-    console.log(name, year, imgUrl, description, author, language)
+   
     bookServices.editBook(bookId, {name, year, imgUrl, description, author, language}, user.accessToken)
     .then(res => {
  navigate(`/details/${bookId}`)

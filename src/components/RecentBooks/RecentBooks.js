@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import * as bookServices from "../../services/bookServices.js";
-import BookCard from "./BookCard.js";
+import BookCard from "../Common/BookCard.js";
 
 const RecentBooks =  () => {
 
