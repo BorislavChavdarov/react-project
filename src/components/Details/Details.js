@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/authContext.js";
 import * as bookServices from "../../services/bookServices.js"
-
+import "./Details.css"
 const Details = () => {
   const { bookId } = useParams();
   const { user } = useAuthContext();
@@ -31,22 +31,16 @@ navigate("/all-books")
 }
 
     return (
-      <div>
+      <div className="details-page">
         <div className="w3-row-padding ">
         
         <div className="w3-twothird w3-padding-64">
           <img src={book.imgUrl} style={{width:"50%"}} />
-          <h2>Info</h2>
-          <table className="w3-table w3-striped w3-bordered w3-border" style={{width:"50%"}}>
-          <thead className="w3-blue"><th style={{width:"30%"}}></th><th></th></thead>
-          <tr><td style={{width:"50%"}}>Year</td><td>{book.year}</td></tr>
-          <tr><td>Author</td><td>{book.author}</td></tr>
-          <tr><td>Language</td><td>{book.language}</td></tr>
-          </table>
+          
        
         </div>
         <div className="w3-third w3-display-topright w3-padding-64" style={{width:"50%"}}>
-          <h1>Description:</h1>
+          <h1 >Description:</h1>
           <p>{book.description}</p>
           {user._id == book._ownerId
                    ?(<>
@@ -62,6 +56,13 @@ navigate("/all-books")
          
           
          <h1>Likes:0</h1>
+         <h2 className="info-header">Info</h2>
+          <table className="w3-table w3-striped w3-bordered w3-border" style={{width:"100%"}}>
+          <thead className="w3-blue"><th style={{width:"30%"}}></th><th></th></thead>
+          <tr><td style={{width:"50%"}}>Year</td><td>{book.year}</td></tr>
+          <tr><td>Author</td><td>{book.author}</td></tr>
+          <tr><td>Language</td><td>{book.language}</td></tr>
+          </table>
          </div>
          </div>
          </div>)

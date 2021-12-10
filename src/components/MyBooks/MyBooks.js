@@ -14,9 +14,9 @@ bookServices.getMyBooks(user._id)
 }, [])
     return ( 
         
-  <div className="w3-black" id="tour">
+ 
     <div className="w3-container w3-content w3-padding-64" style={{"maxWidth":"800px"}}>
-      <div className="w3-row-padding w3-padding-32" style={{margin:"0 -16px"}}>
+      <div className="w3-row-padding w3-padding-32 book-list" style={{margin:"0 -16px"}}>
         
 
           {
@@ -27,8 +27,8 @@ bookServices.getMyBooks(user._id)
 
        
       </div>
-    </div>
-  </div>
+    </div>  
+ 
   
   )
 }

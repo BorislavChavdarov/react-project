@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useAuthContext } from "../../contexts/authContext";
 import { register } from "../../services/authService";
-import { Alert } from "react-bootstrap"
+import { Alert } from "react-bootstrap";
+import "./Register.css"
 const Register = () => {
   const navigate = useNavigate()
   const {login} = useAuthContext()
@@ -45,7 +46,7 @@ const passwordChangeHandler = (e) => {
 
   
     return (
-    <div className="w3-card-4 w3-display-middle w3-quarter ">
+    <div className="w3-card-4 w3-display-middle w3-quarter register-container ">
     <div className="w3-container w3-blue">
       <h2>Register</h2>
     </div>

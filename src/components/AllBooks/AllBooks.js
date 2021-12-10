@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import * as bookServices from "../../services/bookServices.js";
 import BookCard from "../Common/BookCard.js";
-
+import "./AllBooks.css"
 const AllBooks =  () => {
 
   const [books, setBooks] = useState([]);
@@ -13,9 +13,8 @@ bookServices.getAll()
 }, [])
     return ( 
         
-  <div className="w3-black" id="tour">
     <div className="w3-container w3-content w3-padding-64" style={{"maxWidth":"800px"}}>
-      <div className="w3-row-padding w3-padding-32" style={{margin:"0 -16px"}}>
+      <div className="w3-row-padding w3-padding-32 book-list" style={{margin:"0 -16px"}}>
         
 
       {
@@ -25,8 +24,8 @@ bookServices.getAll()
         }
        
       </div>
-    </div>
-  </div>
+    </div> 
+
   
   )
 }

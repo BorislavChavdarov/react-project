@@ -4,7 +4,7 @@ import { Alert } from "react-bootstrap"
 import { useAuthContext } from "../../contexts/authContext.js";
 import { isAuth } from "../../hoc/isAuth.js";
 import * as bookServices from "../../services/bookServices.js"
-
+import "./Edit.css"
 const Edit = () => {
     const { bookId } = useParams();
     const [book, setBook] = useState({});
@@ -80,7 +80,7 @@ const submitHandler = (e) => {
         setErrors(state => ({...state, name: false}))
     }
   };
-    return (<div className="w3-card-4 w3-display-middle w3-quarter ">
+    return (<div className="w3-card-4 w3-display-middle w3-quarter edit-container">
         <div className="w3-container w3-blue">
             <h2>Edit Book</h2>
         </div>

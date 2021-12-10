@@ -1,14 +1,13 @@
-
+import "./ContactUs.css"
 
 
 const ContactUs = () => {
-  throw new Error("errrrrrrrrrrrrrrrrrrrrror")
     return (
-       <div>
+       <div className="contact-container">
        <div className="w3-container w3-content w3-display-left w3-margin-left"  id="contact">
     <h2 className="w3-wide w3-center">CONTACT</h2>
     <div className="w3-row w3-padding-32">
-      <div className="w3-col m6 w3-large w3-margin-bottom">
+      <div className="w3-col w3-large w3-margin-bottom">
         <i className="fa fa-map-marker w3-xxxlarge w3-xxxlarge" style={{width:"30px"}}></i> <p className="w3-xlarge">Chicago, US</p><br />
         <i className="fa fa-phone w3-xxxlarge" style={{width:"30px"}}></i> <p className="w3-xlarge">Phone: +00 151515</p><br />
         <i className="fa fa-envelope w3-xxxlarge" style={{width:"30px"}}> </i><p className="w3-xlarge"> Email: mail@mail.com</p><br />

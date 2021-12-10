@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BookCard from "../Common/BookCard.js";
 import * as bookServices from "../../services/bookServices.js"
-
+import "./Home.css"
 const Home = () => {
 
 
@@ -15,9 +15,9 @@ bookServices.getAllSortedByDate()
 
 
     return ( 
-        <div>
+        <div className="app-home">
     <div className="mySlides w3-display-container w3-center">
-    <img src="https://wallpaperaccess.com/full/6875194.jpg" style={{width:"100%"}} />
+    <img src="https://images.wallpaperscraft.com/image/single/books_library_shelves_collection_120472_2560x1024.jpg" style={{width:"100%"}} />
     
   </div>
   

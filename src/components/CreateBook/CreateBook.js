@@ -4,6 +4,7 @@ import { useAuthContext } from "../../contexts/authContext";
 import { isAuth } from "../../hoc/isAuth.js";
 import { Alert } from "react-bootstrap"
 import { useState } from "react";
+import "./CreateBook.css"
 const CreateBook = () => {
   const {user} = useAuthContext();
   const navigate = useNavigate()
@@ -67,7 +68,7 @@ const languageChangeHandler = (e) => {
   }
 };
     return (
-        <div className="w3-card-4 w3-display-middle w3-quarter ">
+        <div className="w3-card-4 w3-display-middle w3-quarter create-container">
         <div className="w3-container w3-blue">
           <h2>Create Book</h2>
         </div>

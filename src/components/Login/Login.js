@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { useAuthContext } from "../../contexts/authContext";
 import * as authService from "../../services/authService";
-
+import "./Login.css"
 
 
 const Login = () => {
@@ -20,7 +20,7 @@ navigate("/")
 
   };
     return (
-    <div className="w3-card-4 w3-display-middle w3-quarter ">
+    <div className="w3-card-4 w3-display-middle w3-quarter login-container ">
     <div className="w3-container w3-blue">
       <h2>Login</h2>
     </div>
