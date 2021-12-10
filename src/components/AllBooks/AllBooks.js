@@ -14,7 +14,7 @@ bookServices.getAll()
     return ( 
         
   <div className="w3-black" id="tour">
-    <div className="w3-container w3-content w3-padding-64" style={{"max-width":"800px"}}>
+    <div className="w3-container w3-content w3-padding-64" style={{"maxWidth":"800px"}}>
       <div className="w3-row-padding w3-padding-32" style={{margin:"0 -16px"}}>
         
 

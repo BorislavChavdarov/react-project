@@ -12,6 +12,7 @@ import { AuthProvider } from "./contexts/authContext";
 import Logout from "./components/Logout/Logout";
 import Edit from "./components/Edit/Edit";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
