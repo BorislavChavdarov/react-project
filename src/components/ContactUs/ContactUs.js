@@ -2,6 +2,7 @@
 
 
 const ContactUs = () => {
+  throw new Error("errrrrrrrrrrrrrrrrrrrrror")
     return (
        <div>
        <div className="w3-container w3-content w3-display-left w3-margin-left"  id="contact">

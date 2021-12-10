@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { useAuthContext } from "../../contexts/authContext.js";
+import { isAuth } from "../../hoc/isAuth.js";
 import * as bookServices from "../../services/bookServices.js"
 
 const Edit = () => {
@@ -55,4 +56,4 @@ const submitHandler = (e) => {
         </form>
     </div>)
 }
-export default Edit;
+export default isAuth(Edit);

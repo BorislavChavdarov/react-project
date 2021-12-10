@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import * as bookService from "../../services/bookServices.js";
 import { useAuthContext } from "../../contexts/authContext";
-
+import { isAuth } from "../../hoc/isAuth.js";
 
 const CreateBook = () => {
   const {user} = useAuthContext();
@@ -46,4 +46,5 @@ navigate("/all-books")
         </div>
         )
 }
-export default CreateBook;
+export default isAuth(CreateBook);
+

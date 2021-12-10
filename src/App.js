@@ -11,8 +11,11 @@ import RecentBooks from "./components/RecentBooks/RecentBooks";
 import { AuthProvider } from "./contexts/authContext";
 import Logout from "./components/Logout/Logout";
 import Edit from "./components/Edit/Edit";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+
 function App() {
   return (
+    <ErrorBoundary>
     <AuthProvider>
     <div className="App">
      <Header />
@@ -30,6 +33,7 @@ function App() {
      </Routes>
     </div>
     </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
