@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import { Alert } from "react-bootstrap"
 import { useAuthContext } from "../../contexts/authContext.js";
 import { isAuth } from "../../hoc/isAuth.js";
-import * as bookServices from "../../services/bookServices.js"
+import * as bookServices from "../../services/bookService.js"
 import "./Edit.css"
 const Edit = () => {
     const { bookId } = useParams();

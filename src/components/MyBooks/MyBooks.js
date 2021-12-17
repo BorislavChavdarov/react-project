@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useAuthContext } from "../../contexts/authContext.js";
-import * as bookServices from "../../services/bookServices.js";
+import * as bookServices from "../../services/bookService.js";
 import BookCard from "../Common/BookCard.js";
 
 const MyBooks =  () => {

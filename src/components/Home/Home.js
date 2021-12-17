@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import BookCard from "../Common/BookCard.js";
-import * as bookServices from "../../services/bookServices.js"
+import * as bookServices from "../../services/bookService.js"
 import "./Home.css"
 const Home = () => {
 

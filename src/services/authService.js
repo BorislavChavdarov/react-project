@@ -22,7 +22,7 @@ export const login = (email, password) => {
      body: JSON.stringify({ email, password })
     })
     .then(res => res.json())
-    
+   
  }
  export const logout = (token) => {
      console.log("TOKEN:", token)
