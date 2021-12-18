@@ -25,7 +25,7 @@ if (password == rePassword) {
 } else {
   setErrors(state => ({...state, name: 'Passwords do not match!'}))
 }
-   // console.log(email, password, rePassword)
+  
   };
   const emailChangeHandler = (e) => {
     let email = e.target.value;

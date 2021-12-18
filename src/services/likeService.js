@@ -12,7 +12,6 @@ export const like = (userId, BookId, token) => fetch(`${baseUrl}/likes`, {
 export const getLikes = (BookId) => {
     return fetch(`${baseUrl}/likes?select=userId&where=BookId%3D%22${BookId}%22`)
     .then(res => {
-        console.log(res)
         return res
     })
     .then(res => res.json())

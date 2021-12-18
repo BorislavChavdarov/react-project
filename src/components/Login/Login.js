@@ -13,8 +13,8 @@ const {login} = useAuthContext();
     let { email, password } = Object.fromEntries(new FormData(e.currentTarget));
 
     authService.login(email, password)
- .then(res => {
-login(res);
+ .then(({email, _id, accessToken}) => {
+login({email, _id, accessToken});
 navigate("/")
  })
 

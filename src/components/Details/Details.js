@@ -24,8 +24,7 @@ const Details = () => {
 
     likeService.getLikes(bookId)
       .then(res => {
-        console.log(user._id);
-        console.log(res)
+      
         if (res.includes(user._id)) {
           setHasAlreadyLiked(true)
         }

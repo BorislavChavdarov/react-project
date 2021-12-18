@@ -25,7 +25,6 @@ export const login = (email, password) => {
    
  }
  export const logout = (token) => {
-     console.log("TOKEN:", token)
     return fetch(`${baseUrl}/users/logout`, {
         headers: {
             'X-Authorization': token,
