@@ -12,6 +12,14 @@ export const getAllSortedByDate = () => {
    }
 export const getOne = (id) => {
     return fetch(`${baseUrl}/data/books/${id}`)
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error("no such a book")
+        } else {
+            return res;
+        }
+        
+    })
  .then(res => res.json())
 }
 export const create = ({title, year, imgUrl, description, author, language}, token) => {

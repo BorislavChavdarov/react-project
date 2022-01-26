@@ -3,6 +3,7 @@ import { useAuthContext } from "../../contexts/authContext.js";
 import * as bookServices from "../../services/bookService.js";
 import BookCard from "../Common/BookCard.js";
 import { isAuth } from "../../hoc/isAuth.js";
+import "./MyBooks.css"
 const MyBooks =  () => {
  const { user } = useAuthContext()
   const [books, setBooks] = useState([]);
@@ -22,7 +23,7 @@ bookServices.getMyBooks(user._id)
           {
           books.length > 0
           ?books.map(x => <BookCard key={x._id} book={x} />)
-          :<h1>No books to show</h1>
+          :<h1 className="no-books-header">No books to show</h1>
         }
 
        

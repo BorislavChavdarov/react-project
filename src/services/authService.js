@@ -21,8 +21,16 @@ export const login = (email, password) => {
      },
      body: JSON.stringify({ email, password })
     })
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error("Invalid Credentials")
+        } else {
+            return res;
+        }
+        
+    })
     .then(res => res.json())
-   
+    
  }
  export const logout = (token) => {
     return fetch(`${baseUrl}/users/logout`, {

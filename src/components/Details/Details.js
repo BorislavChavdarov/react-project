@@ -73,7 +73,7 @@ const Details = () => {
             : (user._id == ""
               ? (<p>login to like post</p>)
               : (hasAlreadyLiked == true
-                ? (<p>you have already liked this postt</p>)
+                ? (<p>you have already liked this book</p>)
                 : (<button className="w3-btn w3-blue" onClick={likeHandler}>Like</button>)
               )
             )
